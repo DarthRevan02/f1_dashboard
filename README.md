@@ -1,69 +1,84 @@
-# Aadi's Pit Wall · F1 2026 Dashboard
+# Aadi's Pit Wall 🏎️
 
-A bold, single-page Formula 1 dashboard built with vanilla HTML, CSS, and JavaScript.
-It presents a personalized 2026 season view with standings, calendar, race preview, countdown, ticker updates, and dark mode support.
+A personal F1 2026 season dashboard — live-race hero, lights-out countdown, season calendar,
+Drivers'/Constructors' standings, and a paddock news feed, themed around Red Bull and built for
+a Verstappen fan. Originally a single static HTML page, rebuilt here as a proper React + Vite project.
 
-## Preview
+## Stack
 
-Main file: index.html
+- **React 18** + **Vite** — fast dev server, instant HMR
+- Plain CSS (no framework) — all styling lives in `src/App.css`, ported 1:1 from the original design
+- No external UI libraries — the whole thing is hand-rolled components + CSS animations
 
-## Features
+## Project structure
 
-- Editorial-style hero section with animated typography
-- Live-style ticker with repeated paddock data
-- Next race spotlight with countdown timer
-- Season calendar strip with current round highlighting
-- Drivers and constructors tables with team color accents
-- Paddock intel panel (podium + stories)
-- Stats ribbon and personalized driver spotlight
-- Dark mode toggle with persisted preference (localStorage)
-- Responsive layout for desktop and mobile
+```
+aadis-pitwall/
+├── index.html                # HTML shell + Google Fonts (Playfair Display, Inter, JetBrains Mono)
+├── package.json
+├── vite.config.js
+├── src/
+│   ├── main.jsx               # React entry point
+│   ├── App.jsx                # Composes all sections
+│   ├── App.css                # All styling (design tokens, layout, animations)
+│   ├── data/
+│   │   └── f1Data.js          # ⭐ All editable content: race weekend, standings, calendar, news
+│   ├── hooks/
+│   │   ├── useCountdown.js    # "Lights Out In" countdown ticker
+│   │   └── useTheme.js        # Light/dark mode, persisted to localStorage
+│   └── components/
+│       ├── Ticker.jsx         # Scrolling headline marquee
+│       ├── ThemeToggle.jsx    # Floating dark-mode button
+│       ├── Hero.jsx           # Page title + live greeting/date
+│       ├── RaceHero.jsx       # Current race weekend block + countdown
+│       ├── VerSpotlight.jsx   # Favourite-driver spotlight card
+│       ├── Calendar.jsx       # Scrollable 23-round season strip (auto-scrolls to next race)
+│       ├── Drivers.jsx        # Drivers' Championship standings
+│       ├── Constructors.jsx   # Constructors' Cup standings
+│       ├── Paddock.jsx        # FP1 podium + news articles
+│       ├── StatsRibbon.jsx    # Bottom stat cards
+│       └── Footer.jsx
+└── public/
+```
 
-## Tech Stack
+## Getting started
 
-- HTML5
-- Modern CSS (custom properties, animations, responsive media queries)
-- Vanilla JavaScript (DOM updates, timers, localStorage)
+```bash
+npm install
+npm run dev
+```
 
-## Getting Started
+Then open the printed local URL (usually `http://localhost:5173`).
 
-1. Clone or download this repository.
-2. Open the project folder.
-3. Open index.html in your browser.
+To build a production bundle:
 
-No build step or dependencies are required.
+```bash
+npm run build
+npm run preview   # preview the production build locally
+```
 
-## Project Structure
+## Updating race-weekend data
 
-- index.html: Complete app (markup, styling, and scripts in one file)
+Everything you'd want to change on a normal race weekend — the current race, countdown target,
+standings, calendar results, FP1 podium, and news articles — lives in one file:
 
-## Customization
+```
+src/data/f1Data.js
+```
 
-You can quickly personalize the dashboard by editing values in index.html:
+No JSX editing required for routine updates. A few pointers:
 
-- Theme colors and team color tokens in the :root CSS block
-- Driver and constructor rows in the standings sections
-- Calendar rounds and winners in the calendar strip
-- Countdown target date in the JavaScript block:
-  - new Date('2026-05-03T20:00:00Z')
-- Ticker feed items in the items array
-- Personalized labels/text (name, favorite driver/team, notes)
+- `currentRace.lightsOutISO` — ISO timestamp the countdown ticks down to (in UTC)
+- `calendar[].status` — one of `"done"`, `"next"`, or `"upcoming"` (controls styling + the auto-scroll target)
+- `drivers[].favDriver` / `constructors[].favTeam` — highlights the row you're rooting for
+- `fanDriver` — the driver code your countdown/spotlight card is centred on
 
-## Accessibility Notes
+## Notes on the rebuild
 
-- Includes semantic sectioning and readable contrast in both themes
-- Dark mode toggle uses aria-label
-- Consider adding reduced-motion handling if heavy animations are an issue for some users
-
-## Deployment
-
-This project is currently deployed on Vercel.
-
-- Live URL: https://f1dashboard-murex.vercel.app/
-
-Because it is a static site, it can also be hosted on other static platforms if needed.
-
-## License
-
-No license is currently defined.
-If you plan to share publicly, add a LICENSE file (for example MIT).
+- The original page manipulated the DOM directly with vanilla JS (`setInterval` for the countdown,
+  `localStorage` for theme, manual ticker string-building). These are now `useEffect`/`useState`-based
+  hooks (`useCountdown`, `useTheme`) instead — same behavior, React-idiomatic.
+- All hardcoded race content was extracted into `src/data/f1Data.js` so the season can be updated
+  without touching any component code.
+- Dark mode still persists across visits via `localStorage`, applied as `data-theme="dark"` on
+  `<html>`, matching the original CSS variable-swap approach.
