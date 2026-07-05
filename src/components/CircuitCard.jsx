@@ -59,14 +59,18 @@ export default function CircuitCard({ round, details, onClose }) {
               ))}
             </div>
 
-            {details.mapImage && (
-              <div className="circuit-map-block">
-                <div className="circuit-map-label">Track Layout</div>
+            <div className="circuit-map-block">
+              <div className="circuit-map-label">Track Layout</div>
+              {details.mapImage ? (
                 <div className="circuit-map">
                   <img src={details.mapImage} alt={`${round.name} circuit layout`} />
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="circuit-map circuit-map-placeholder">
+                  Circuit map will be added soon.
+                </div>
+              )}
+            </div>
           </>
         ) : (
           <div className="circuit-modal-empty">Circuit data coming soon.</div>
