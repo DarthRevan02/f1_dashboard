@@ -357,7 +357,7 @@ body::before {
 #dm-toggle:hover::after{opacity:1}
 
 /* Circuit detail card, opened by clicking a round on the season calendar */
-.circuit-modal-backdrop{position:fixed;inset:0;background:rgba(4,6,15,0.68);backdrop-filter:blur(3px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;animation:circuitFadeIn 0.2s ease both}
+.circuit-modal-backdrop{position:fixed;inset:0;background:rgba(4,6,15,0.68);backdrop-filter:blur(3px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;animation:circuitFadeIn 0.2s ease both}
 .circuit-modal{position:relative;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;background:var(--paper);border:2px solid var(--ink);box-shadow:0 20px 60px rgba(0,0,0,0.45);padding:32px;animation:circuitPopIn 0.25s cubic-bezier(.3,.9,.3,1) both}
 [data-theme="dark"] .circuit-modal{background:var(--paper-2)}
 .circuit-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:1px solid var(--rule-light);background:var(--paper-2);color:var(--ink-2);cursor:pointer;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s,border-color 0.2s}
@@ -372,8 +372,10 @@ body::before {
 .circuit-stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;margin-bottom:8px}
 .circuit-stat-value{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.01em}
 .circuit-stat-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.55);margin-top:4px}
-.circuit-map{border:1px solid var(--rule-light);background:#0a0e1c;padding:12px;display:flex;align-items:center;justify-content:center}
-.circuit-map img{max-width:100%;height:auto;display:block}
+.circuit-map-block{margin-top:4px}
+.circuit-map-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:10px}
+.circuit-map{border:1px solid var(--rule-light);background:#0a0e1c;padding:20px;display:flex;align-items:center;justify-content:center;min-height:200px}
+.circuit-map img{max-width:100%;max-height:360px;width:auto;height:auto;display:block}
 .circuit-modal-empty{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-3);letter-spacing:.04em;padding:24px 0}
 @keyframes circuitFadeIn{from{opacity:0}to{opacity:1}}
 @keyframes circuitPopIn{from{opacity:0;transform:translateY(12px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}

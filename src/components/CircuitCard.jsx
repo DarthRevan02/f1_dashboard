@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function CircuitCard({ round, details, onClose }) {
   // Close on Escape
@@ -7,6 +8,15 @@ export default function CircuitCard({ round, details, onClose }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
+
+  // Lock background scroll while open
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, []);
 
   if (!round) return null;
 
@@ -24,7 +34,7 @@ export default function CircuitCard({ round, details, onClose }) {
       ]
     : [];
 
-  return (
+  return createPortal(
     <div className="circuit-modal-backdrop" onClick={onClose}>
       <div className="circuit-modal" onClick={(e) => e.stopPropagation()}>
         <button className="circuit-modal-close" onClick={onClose} aria-label="Close">✕</button>
@@ -50,8 +60,11 @@ export default function CircuitCard({ round, details, onClose }) {
             </div>
 
             {details.mapImage && (
-              <div className="circuit-map">
-                <img src={details.mapImage} alt={`${round.name} circuit layout`} />
+              <div className="circuit-map-block">
+                <div className="circuit-map-label">Track Layout</div>
+                <div className="circuit-map">
+                  <img src={details.mapImage} alt={`${round.name} circuit layout`} />
+                </div>
               </div>
             )}
           </>
@@ -59,6 +72,7 @@ export default function CircuitCard({ round, details, onClose }) {
           <div className="circuit-modal-empty">Circuit data coming soon.</div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
