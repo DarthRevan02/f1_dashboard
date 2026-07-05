@@ -130,7 +130,7 @@ export const circuitDetails = {
     raceDistance: '306.33 km',
     laps: 52,
     lapRecord: { time: '1:27.097', holder: 'Max Verstappen', year: 2020 },
-    defendingChampion: 'Lando Norris',
+    defendingChampion: 'Charles Leclerc',
     mapImage: '/circuits/silverstone.png',
   },
   R10: {
