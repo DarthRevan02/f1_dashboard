@@ -178,6 +178,7 @@ export const circuitDetails = {
     laps: 51,
     lapRecord: { time: '1:43.009', holder: 'Charles Leclerc', year: 2019 },
     defendingChampion: 'Max Verstappen',
+    mapImage: '/circuits/baku.png',
   },
   R16: {
     circuitLength: '4.940 km',
@@ -185,6 +186,7 @@ export const circuitDetails = {
     laps: 62,
     lapRecord: { time: '1:33.808', holder: 'Lewis Hamilton', year: 2025 },
     defendingChampion: 'George Russell',
+    mapImage: '/circuits/marina_bay.png',
   },
   R17: {
     circuitLength: '5.513 km',
