@@ -68,6 +68,62 @@ export const calendar = [
 // Add an entry here for any round to make its card show real data —
 // rounds without an entry fall back to a "coming soon" state.
 export const circuitDetails = {
+  R01: {
+    circuitLength: '5.278 km',
+    raceDistance: '306.124 km',
+    laps: 58,
+    lapRecord: { time: '1:19.813', holder: 'Charles Leclerc', year: 2024 },
+    defendingChampion: 'G. Russell',
+  },
+  R02: {
+    circuitLength: '5.451 km',
+    raceDistance: '305.066 km',
+    laps: 56,
+    lapRecord: { time: '1:32.238', holder: 'Michael Schumacher', year: 2004 },
+    defendingChampion: 'K. Antonelli',
+  },
+  R03: {
+    circuitLength: '5.807 km',
+    raceDistance: '307.471 km',
+    laps: 53,
+    lapRecord: { time: '1:30.965', holder: 'Kimi Antonelli', year: 2025 },
+    defendingChampion: 'K. Antonelli',
+  },
+  R04: {
+    circuitLength: '5.412 km',
+    raceDistance: '308.326 km',
+    laps: 57,
+    lapRecord: { time: '1:29.708', holder: 'Max Verstappen', year: 2023 },
+    defendingChampion: 'K. Antonelli',
+  },
+  R05: {
+    circuitLength: '4.361 km',
+    raceDistance: '305.270 km',
+    laps: 70,
+    lapRecord: { time: '1:13.078', holder: 'Valtteri Bottas', year: 2019 },
+    defendingChampion: 'K. Antonelli',
+  },
+  R06: {
+    circuitLength: '3.337 km',
+    raceDistance: '260.286 km',
+    laps: 78,
+    lapRecord: { time: '1:12.909', holder: 'Lewis Hamilton', year: 2021 },
+    defendingChampion: 'K. Antonelli',
+  },
+  R07: {
+    circuitLength: '4.657 km',
+    raceDistance: '307.236 km',
+    laps: 66,
+    lapRecord: { time: '1:15.743', holder: 'Oscar Piastri', year: 2025 },
+    defendingChampion: 'L. Hamilton',
+  },
+  R08: {
+    circuitLength: '4.318 km',
+    raceDistance: '306.452 km',
+    laps: 71,
+    lapRecord: { time: '1:07.924', holder: 'Oscar Piastri', year: 2025 },
+    defendingChampion: 'G. Russell',
+  },
   R09: {
     circuitLength: '5.891 km',
     raceDistance: '306.33 km',
