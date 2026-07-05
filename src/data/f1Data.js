@@ -29,7 +29,7 @@ export const verstappenSpotlight = {
   eyebrow: '⚡ Favourite Driver · Oracle Red Bull Racing',
   name: 'Max',
   nameEm: 'Verstappen',
-  meta: 'NED · 4× World Champion · #33 · RB22',
+  meta: 'NED · 4× World Champion · #3 · RB22',
   stats: [
     { label: 'British GP · Silverstone', value: 'DNF' },
     { label: 'Championship', value: 'P7 · 76pts' },
