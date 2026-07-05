@@ -3,24 +3,25 @@
 
 export const fanDriver = 'VER'; // code of the driver this dashboard follows
 
-export const roundsCompleted = 8; // rounds fully finished before the current weekend
+export const roundsCompleted = 9; // rounds fully finished before the current weekend
 
 export const currentRace = {
-  round: 9,
+  round: 10,
   totalRounds: 22,
-  status: 'Live Weekend',
-  flag: '🇬🇧',
-  name: 'British',
+  status: 'Up Next',
+  live: false,
+  flag: '🇧🇪',
+  name: 'Belgian',
   nameEm: 'Grand Prix',
-  circuit: 'Silverstone Circuit',
-  venue: 'Silverstone, Northamptonshire',
-  laps: 52,
-  distanceKm: 306.198,
-  format: 'Sprint Format',
-  raceDateLabel: 'Jul 5 · Sun',
-  // ISO timestamp used for the lights-out countdown (15:00 BST / 14:00 UTC)
-  lightsOutISO: '2026-07-05T14:00:00Z',
-  fp1: { driver: 'K. Antonelli', time: 'Sprint Winner', label: 'Sprint Winner', timeLabel: 'Sprint Gap to P2' },
+  circuit: 'Circuit de Spa-Francorchamps',
+  venue: 'Stavelot, Belgium',
+  laps: 44,
+  distanceKm: 308.052,
+  format: 'Standard Format',
+  raceDateLabel: 'Jul 19 · Sun',
+  // ISO timestamp used for the lights-out countdown (15:00 CEST / 14:00 BST / 13:00 UTC)
+  lightsOutISO: '2026-07-19T13:00:00Z',
+  fp1: { driver: 'C. Leclerc', time: 'Winner · GBR', label: 'Last Race Winner', timeLabel: 'British GP Result' },
 };
 
 export const verstappenSpotlight = {
@@ -30,13 +31,13 @@ export const verstappenSpotlight = {
   nameEm: 'Verstappen',
   meta: 'NED · 4× World Champion · #33 · RB22',
   stats: [
-    { label: 'Sprint · Silverstone', value: 'P5' },
+    { label: 'British GP · Silverstone', value: 'DNF' },
     { label: 'Championship', value: 'P7 · 76pts' },
     { label: 'Gap to P1', value: '−103', highlight: true },
   ],
 };
 
-export const seasonProgressPct = Math.round((8.5 / 22) * 100 * 10) / 10;
+export const seasonProgressPct = Math.round((9 / 22) * 100 * 10) / 10;
 
 export const calendar = [
   { id: 'R01', round: 'R01', status: 'done', flag: '🇦🇺', country: 'Australia', name: 'Albert Park', date: 'Mar 06–08', winner: 'G. Russell' },
@@ -47,11 +48,11 @@ export const calendar = [
   { id: 'R06', round: 'R06', status: 'done', flag: '🇲🇨', country: 'Monaco', name: 'Monte Carlo', date: 'Jun 04–07', winner: 'K. Antonelli' },
   { id: 'R07', round: 'R07', status: 'done', flag: '🇪🇸', country: 'Spain', name: 'Barcelona', date: 'Jun 11–14', winner: 'L. Hamilton' },
   { id: 'R08', round: 'R08', status: 'done', flag: '🇦🇹', country: 'Austria', name: 'Red Bull Ring', date: 'Jun 25–28', winner: 'G. Russell' },
-  { id: 'R09', round: 'R09 · LIVE 🔴', status: 'next', flag: '🇬🇧', country: 'UK', name: 'Silverstone', date: 'Jul 02–05' },
-  { id: 'R10', round: 'R10', status: 'upcoming', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 16–19' },
-  { id: 'R11', round: 'R11', status: 'upcoming', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 23–26' },
-  { id: 'R12', round: 'R12', status: 'upcoming', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 20–23' },
-  { id: 'R13', round: 'R13', status: 'upcoming', flag: '🇮🇹', country: 'Italy', name: 'Monza', date: 'Sep 03–06' },
+  { id: 'R09', round: 'R09', status: 'done', flag: '🇬🇧', country: 'UK', name: 'Silverstone', date: 'Jul 02–05', winner: 'C. Leclerc' },
+  { id: 'R10', round: 'R10 · NEXT', status: 'next', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 17–19' },
+  { id: 'R11', round: 'R11', status: 'upcoming', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 24–26' },
+  { id: 'R12', round: 'R12', status: 'upcoming', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 21–23' },
+  { id: 'R13', round: 'R13', status: 'upcoming', flag: '🇮🇹', country: 'Italy', name: 'Monza', date: 'Sep 04–06' },
   { id: 'R14', round: 'R14', status: 'upcoming', flag: '🇪🇸', country: 'Spain', name: 'Madrid', date: 'Sep 10–13' },
   { id: 'R15', round: 'R15', status: 'upcoming', flag: '🇦🇿', country: 'Azerbaijan', name: 'Baku', date: 'Sep 23–26' },
   { id: 'R16', round: 'R16', status: 'upcoming', flag: '🇸🇬', country: 'Singapore', name: 'Marina Bay', date: 'Oct 09–11' },
@@ -132,95 +133,190 @@ export const circuitDetails = {
     defendingChampion: 'Lando Norris',
     mapImage: '/circuits/silverstone.png',
   },
+  R10: {
+    circuitLength: '7.004 km',
+    raceDistance: '308.052 km',
+    laps: 44,
+    lapRecord: { time: '1:44.701', holder: 'Sergio Pérez', year: 2024 },
+    defendingChampion: 'Oscar Piastri',
+    mapImage: '/circuits/spa.png',
+  },
+  R11: {
+    circuitLength: '4.381 km',
+    raceDistance: '306.63 km',
+    laps: 70,
+    lapRecord: { time: '1:16.627', holder: 'Lewis Hamilton', year: 2020 },
+    defendingChampion: 'Lando Norris',
+    mapImage: '/circuits/hungaroring.png',
+  },
+  R12: {
+    circuitLength: '4.259 km',
+    raceDistance: '306.587 km',
+    laps: 72,
+    lapRecord: { time: '1:11.097', holder: 'Lewis Hamilton', year: 2021 },
+    defendingChampion: 'Oscar Piastri',
+    mapImage: '/circuits/zandvoort.png',
+  },
+  R13: {
+    circuitLength: '5.793 km',
+    raceDistance: '306.72 km',
+    laps: 53,
+    lapRecord: { time: '1:20.901', holder: 'Lando Norris', year: 2025 },
+    defendingChampion: 'Max Verstappen',
+    mapImage: '/circuits/monza.png',
+  },
+  R14: {
+    circuitLength: '5.474 km',
+    raceDistance: '312.02 km',
+    laps: 57,
+    lapRecord: { time: 'N/A', holder: 'Circuit debut', year: 2026 },
+    defendingChampion: 'Inaugural race',
+  },
+  R15: {
+    circuitLength: '6.003 km',
+    raceDistance: '306.049 km',
+    laps: 51,
+    lapRecord: { time: '1:43.009', holder: 'Charles Leclerc', year: 2019 },
+    defendingChampion: 'Max Verstappen',
+  },
+  R16: {
+    circuitLength: '4.940 km',
+    raceDistance: '306.143 km',
+    laps: 62,
+    lapRecord: { time: '1:33.808', holder: 'Lewis Hamilton', year: 2025 },
+    defendingChampion: 'George Russell',
+  },
+  R17: {
+    circuitLength: '5.513 km',
+    raceDistance: '308.405 km',
+    laps: 56,
+    lapRecord: { time: '1:36.169', holder: 'Charles Leclerc', year: 2019 },
+    defendingChampion: 'Max Verstappen',
+  },
+  R18: {
+    circuitLength: '4.304 km',
+    raceDistance: '305.354 km',
+    laps: 71,
+    lapRecord: { time: '1:17.774', holder: 'Valtteri Bottas', year: 2021 },
+    defendingChampion: 'Lando Norris',
+  },
+  R19: {
+    circuitLength: '4.309 km',
+    raceDistance: '305.879 km',
+    laps: 71,
+    lapRecord: { time: '1:10.540', holder: 'Valtteri Bottas', year: 2018 },
+    defendingChampion: 'Lando Norris',
+  },
+  R20: {
+    circuitLength: '6.201 km',
+    raceDistance: '309.958 km',
+    laps: 50,
+    lapRecord: { time: '1:33.365', holder: 'Max Verstappen', year: 2025 },
+    defendingChampion: 'Max Verstappen',
+  },
+  R21: {
+    circuitLength: '5.419 km',
+    raceDistance: '308.611 km',
+    laps: 57,
+    lapRecord: { time: '1:22.384', holder: 'Lando Norris', year: 2024 },
+    defendingChampion: 'Max Verstappen',
+  },
+  R22: {
+    circuitLength: '5.281 km',
+    raceDistance: '306.183 km',
+    laps: 58,
+    lapRecord: { time: '1:25.637', holder: 'Kevin Magnussen', year: 2024 },
+    defendingChampion: 'Max Verstappen',
+  },
 };
 
-// Drivers' Championship — after the Silverstone Sprint (Sat 4 Jul 2026)
+// Drivers' Championship — after the British Grand Prix (Sun 5 Jul 2026)
 export const drivers = [
   { pos: 1, name: 'K. Antonelli', code: 'ANT', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'ITA', gap: null, pts: 179, leader: true },
-  { pos: 2, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -43, pts: 136 },
-  { pos: 3, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -47, pts: 132 },
-  { pos: 4, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -94, pts: 85 },
-  { pos: 5, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -96, pts: 83 },
+  { pos: 2, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -25, pts: 154 },
+  { pos: 3, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -32, pts: 147 },
+  { pos: 4, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -71, pts: 108 },
+  { pos: 5, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -82, pts: 97 },
   { pos: 6, name: 'O. Piastri', code: 'PIA', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'AUS', gap: -97, pts: 82 },
   { pos: 7, name: 'M. Verstappen', code: 'VER', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'NED', gap: -103, pts: 76, favDriver: true },
-  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -137, pts: 42 },
-  { pos: 9, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -138, pts: 41 },
-  { pos: 10, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -148, pts: 31 },
+  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -127, pts: 52 },
+  { pos: 9, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -137, pts: 42 },
+  { pos: 10, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -140, pts: 39 },
 ];
 
-// Constructors' Cup — after the Silverstone Sprint
+// Constructors' Cup — after the British Grand Prix
 export const constructors = [
-  { pos: 1, name: 'Mercedes-AMG', engine: 'Mercedes PU · DEU', teamVar: '--mercedes', pts: 315, barPct: 100 },
-  { pos: 2, name: 'Scuderia Ferrari', engine: 'Ferrari PU · ITA', teamVar: '--ferrari', pts: 215, barPct: 68 },
-  { pos: 3, name: 'McLaren', engine: 'Mercedes PU · GBR', teamVar: '--mclaren', pts: 167, barPct: 53 },
-  { pos: 4, name: 'Red Bull Racing ⚡', engine: 'Red Bull Ford · AUT', teamVar: '--redbull', pts: 118, barPct: 37, favTeam: true },
-  { pos: 5, name: 'Alpine', engine: 'Mercedes PU · FRA', teamVar: '--alpine', pts: 57, barPct: 18 },
-  { pos: 6, name: 'Racing Bulls', engine: 'Red Bull Ford · ITA', teamVar: '--racingbulls', pts: 45, barPct: 14 },
-  { pos: 7, name: 'Haas F1', engine: 'Ferrari PU · USA', teamVar: '--haas', pts: 21, barPct: 7 },
+  { pos: 1, name: 'Mercedes-AMG', engine: 'Mercedes PU · DEU', teamVar: '--mercedes', pts: 333, barPct: 100 },
+  { pos: 2, name: 'Scuderia Ferrari', engine: 'Ferrari PU · ITA', teamVar: '--ferrari', pts: 255, barPct: 77 },
+  { pos: 3, name: 'McLaren', engine: 'Mercedes PU · GBR', teamVar: '--mclaren', pts: 179, barPct: 54 },
+  { pos: 4, name: 'Red Bull Racing ⚡', engine: 'Red Bull Ford · AUT', teamVar: '--redbull', pts: 128, barPct: 38, favTeam: true },
+  { pos: 5, name: 'Alpine', engine: 'Mercedes PU · FRA', teamVar: '--alpine', pts: 60, barPct: 18 },
+  { pos: 6, name: 'Racing Bulls', engine: 'Red Bull Ford · ITA', teamVar: '--racingbulls', pts: 59, barPct: 18 },
+  { pos: 7, name: 'Haas F1', engine: 'Ferrari PU · USA', teamVar: '--haas', pts: 21, barPct: 6 },
   { pos: 8, name: 'Williams', engine: 'Mercedes PU · GBR', teamVar: '--williams', pts: 11, barPct: 3 },
-  { pos: 9, name: 'Audi', engine: 'Audi PU · DEU', teamVar: '--audi', pts: 2, barPct: 1 },
+  { pos: 9, name: 'Audi', engine: 'Audi PU · DEU', teamVar: '--audi', pts: 6, barPct: 2 },
   { pos: 10, name: 'Aston Martin', engine: 'Honda PU · GBR', teamVar: '--aston', pts: 1, barPct: 0 },
   { pos: 11, name: 'Cadillac', engine: 'Ferrari PU · USA · NEW', teamVar: '--cadillac', pts: 0, barPct: 0 },
 ];
 
 export const paddockMeta = {
-  sessionLine: 'Silverstone Live · Jul 05, 2026',
-  podiumHead: 'British GP Sprint · Top 3 · Sat 4 Jul',
+  sessionLine: 'Silverstone Result · Jul 05, 2026',
+  podiumHead: 'British GP · Top 3 · Sun 5 Jul',
 };
 
-// Silverstone Sprint result, Sat 4 July 2026
+// British Grand Prix result, Sun 5 July 2026 — race finished behind the Safety Car
 export const fp1Podium = [
-  { pos: 'P1', name: 'Kimi Antonelli', team: 'Mercedes · Winner', time: 'Winner' },
-  { pos: 'P2', name: 'Lewis Hamilton', team: 'Ferrari · +2.745s', time: '+2.745' },
-  { pos: 'P3', name: 'Lando Norris', team: 'McLaren · +9.783s', time: '+9.783' },
+  { pos: 'P1', name: 'Charles Leclerc', team: 'Ferrari · Winner', time: 'Winner' },
+  { pos: 'P2', name: 'George Russell', team: 'Mercedes · SC finish', time: 'SC' },
+  { pos: 'P3', name: 'Lewis Hamilton', team: 'Ferrari · Under review', time: 'Investigation' },
 ];
 
 export const news = [
   {
-    kicker: 'SPRINT · JUL 04',
+    kicker: 'RACE · JUL 05',
     num: '01',
     lead: true,
     tone: 'default',
-    headline: 'Antonelli hunts down Hamilton to win Silverstone Sprint in front of his home crowd',
-    body: 'Lewis Hamilton led the opening laps from pole and had home fans dreaming, but championship leader Kimi Antonelli passed him at half-distance and pulled away to win by 2.7 seconds. Lando Norris took a comfortable third after a frantic multi-car scrap in the early laps involving Russell, Piastri, Verstappen and Leclerc. Antonelli now leads Russell by 43 points and Hamilton by 47 heading into Sunday\u2019s Grand Prix.',
+    headline: 'Leclerc wins chaotic British GP as Antonelli\u2019s title charge unravels late',
+    body: 'Charles Leclerc held firm through a dramatic Silverstone to claim his ninth career win and first at the circuit, after championship leader Kimi Antonelli — who had built a commanding lead — suffered a left-front wheel shield failure on Lap 41 and picked up a track-limits penalty that dropped him out of the points entirely. A late Verstappen crash brought out the Safety Car that sealed the result, with George Russell inheriting second by staying out during the stoppage.',
   },
   {
     kicker: '⚡ Red Bull Watch',
     num: '02',
-    tone: 'neutral',
-    headline: 'Verstappen stuck in P5 at the Sprint as Red Bull\u2019s summer-break exit clause looms',
-    body: 'Max finished fifth in the Sprint, three seconds off the podium places, and sits seventh in the championship — the position widely reported to trigger a clause letting him leave Red Bull if he\u2019s outside the top two by the summer break. With McLaren\u2019s Zak Brown already fielding questions about a possible Verstappen signing, speculation over his 2027 seat is intensifying just as the team looks for a response at his home-away-from-home circuit.',
+    tone: 'alert',
+    headline: 'Another blank for Verstappen as late Stowe crash ends his Silverstone weekend',
+    body: 'Max spun into the gravel at Stowe on Lap 48 while running well outside the points, triggering the Safety Car that decided the race for those ahead of him. It is his second retirement of the season and leaves Red Bull\u2019s home-soil title defence looking increasingly remote — Max remains seventh in the standings, 103 points off the lead, as speculation over his long-term future keeps building in the paddock.',
   },
   {
     kicker: '⚠ Stewards\u2019 Inquiry',
     num: '03',
     tone: 'alert',
-    headline: 'Lawson\u2019s late Sprint overtake under investigation — Hadjar could inherit the point',
-    body: 'Liam Lawson\u2019s defensive move on Oscar Piastri for eighth place on the penultimate lap of the Sprint has been referred to the stewards. A points swap would promote Red Bull\u2019s Isack Hadjar into the last scoring position, with a decision expected before Sunday\u2019s Grand Prix grid is finalised.',
+    headline: 'Hamilton\u2019s home podium in jeopardy after yellow-flag investigation',
+    body: 'Lewis Hamilton crossed the line third in front of his home crowd, but the stewards have opened a post-race investigation into a yellow-flag infringement that could yet cost him the result. A decision is expected in the hours after the race, with Isack Hadjar\u2019s fifth-place Red Bull result also under scrutiny from the same phase of the Safety Car period.',
   },
   {
-    kicker: 'Team Update',
+    kicker: 'Title Fight',
     num: '04',
     tone: 'neutral',
-    headline: 'Mercedes\u2019 100-point constructors\u2019 lead grows as McLaren edges closer to Red Bull',
-    body: 'The Silver Arrows now lead Ferrari by exactly 100 points in the Constructors\u2019 Championship after Silverstone\u2019s sprint. Behind them, McLaren\u2019s 167 points put real distance between themselves and a struggling Red Bull, who sit fourth on 118 — a reversal from years past that has fuelled the paddock chatter around Verstappen\u2019s future.',
+    headline: 'Antonelli\u2019s lead cut to 25 points as Mercedes team mates close in',
+    body: 'Kimi Antonelli\u2019s non-score allowed both George Russell and Lewis Hamilton to close the gap at the top, with Russell now just a race win behind. Ferrari also clawed back 22 points on Mercedes in the Constructors\u2019 Championship thanks to Leclerc\u2019s win, setting up a tighter fight as the paddock heads to Spa-Francorchamps for round 10.',
   },
 ];
 
 export const tickerItems = [
-  { sym: 'SPRINT', val: 'ANTONELLI WINS', pts: 'BEATS HAMILTON' },
-  { sym: 'WDC', val: 'ANTONELLI 179', pts: '+43 OVER RUSSELL' },
-  { sym: 'VER ⚡', val: 'P5 IN SPRINT', pts: 'P7 CHAMPIONSHIP' },
-  { sym: 'EXIT CLAUSE', val: 'SUMMER BREAK', pts: 'TOP 2 OR OUT' },
-  { sym: 'WCC', val: 'MERCEDES 315', pts: '+100 OVER FERRARI' },
-  { sym: 'STEWARDS', val: 'LAWSON UNDER REVIEW', pts: 'HADJAR MAY GAIN' },
-  { sym: 'GP TODAY', val: '3PM BST', pts: 'SILVERSTONE' },
-  { sym: 'MCLAREN', val: 'BROWN ON VER', pts: '2027 SPECULATION' },
+  { sym: 'RACE', val: 'LECLERC WINS', pts: 'FIRST AT SILVERSTONE' },
+  { sym: 'WDC', val: 'ANTONELLI 179', pts: '+25 OVER RUSSELL' },
+  { sym: 'VER ⚡', val: 'DNF · CRASH', pts: 'P7 CHAMPIONSHIP' },
+  { sym: 'ANTONELLI', val: 'WHEEL SHIELD FAIL', pts: 'DROPPED OUT OF POINTS' },
+  { sym: 'WCC', val: 'MERCEDES 333', pts: '+78 OVER FERRARI' },
+  { sym: 'STEWARDS', val: 'HAMILTON UNDER REVIEW', pts: 'PODIUM AT RISK' },
+  { sym: 'NEXT UP', val: 'BELGIAN GP', pts: 'SPA · JUL 19' },
+  { sym: 'SPA', val: '44 LAPS', pts: '308.052 KM' },
 ];
 
 export const statsRibbon = [
-  { label: 'Sprint Winner · Silverstone', big: 'ANT', bigEm: 'P1', sub: 'Antonelli beats Hamilton by 2.745s' },
-  { label: 'Championship Gap', big: '', bigEm: '+43', bigTail: 'pts', sub: 'Antonelli leads Russell after the Sprint' },
-  { label: '⚡ Verstappen · Sprint', big: 'P5', bigEm: 'P7 WDC', sub: 'Exit clause looms at summer break', isVer: true },
-  { label: 'Constructors\u2019 Gap', big: 'MER', bigEm: '+100', bigTail: 'pts', sub: 'Mercedes lead Ferrari · McLaren P3' },
+  { label: 'Race Winner · Silverstone', big: 'LEC', bigEm: 'P1', sub: 'Leclerc\u2019s first British GP win' },
+  { label: 'Championship Gap', big: '', bigEm: '+25', bigTail: 'pts', sub: 'Antonelli leads Russell after a costly DNF' },
+  { label: '⚡ Verstappen · British GP', big: 'DNF', bigEm: 'P7 WDC', sub: 'Late crash at Stowe triggers Safety Car', isVer: true },
+  { label: 'Constructors\u2019 Gap', big: 'MER', bigEm: '+78', bigTail: 'pts', sub: 'Mercedes lead Ferrari · McLaren P3' },
 ];

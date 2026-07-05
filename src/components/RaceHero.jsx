@@ -9,7 +9,7 @@ export default function RaceHero({ race }) {
         <div className="race-grid">
           <div className="race-left">
             <div className="race-meta-row">
-              <span className="race-round">◆ Round {String(race.round).padStart(2, '0')} · {race.status} 🔴</span>
+              <span className="race-round">◆ Round {String(race.round).padStart(2, '0')} · {race.status}{race.live ? ' 🔴' : ''}</span>
               <span className="race-flag-big">{race.flag}</span>
             </div>
             <h2 className="race-name">{race.name} <em>{race.nameEm}</em></h2>
