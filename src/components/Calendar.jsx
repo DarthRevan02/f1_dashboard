@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import CircuitCard from './CircuitCard';
+import { circuitDetails } from '../data/f1Data';
 
 export default function Calendar({ rounds, progressPct }) {
   const stripRef = useRef(null);
   const nextRef = useRef(null);
+  const [activeRound, setActiveRound] = useState(null);
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -33,6 +36,9 @@ export default function Calendar({ rounds, progressPct }) {
                 key={r.round}
                 ref={isNext ? nextRef : null}
                 className={`cal-round${isDone ? ' done' : ''}${isNext ? ' next' : ''}`}
+                onClick={() => setActiveRound(r)}
+                role="button"
+                tabIndex={0}
               >
                 <div className="cal-rnum">
                   {r.round}
@@ -48,6 +54,14 @@ export default function Calendar({ rounds, progressPct }) {
           })}
         </div>
       </div>
+
+      {activeRound && (
+        <CircuitCard
+          round={activeRound}
+          details={circuitDetails[activeRound.id]}
+          onClose={() => setActiveRound(null)}
+        />
+      )}
     </section>
   );
 }

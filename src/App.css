@@ -27,6 +27,7 @@
   --cadillac:   #8A9099;
   --rule-light: #c8d0e4;
   --rb-yellow:  #ffd700;
+  --track:      #ff8c42;
   --theme-transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
@@ -183,7 +184,7 @@ body::before {
 .cal-strip { display:grid;grid-auto-flow:column;grid-auto-columns:minmax(132px,1fr);overflow-x:auto;scrollbar-width:thin; }
 .cal-strip::-webkit-scrollbar{height:4px}
 .cal-strip::-webkit-scrollbar-thumb{background:var(--redbull)}
-.cal-round { padding:20px 16px 18px;border-right:1px solid var(--rule-light);position:relative;background:var(--paper);transition:background 0.25s,transform 0.25s;min-height:148px;display:flex;flex-direction:column;cursor:default; }
+.cal-round { padding:20px 16px 18px;border-right:1px solid var(--rule-light);position:relative;background:var(--paper);transition:background 0.25s,transform 0.25s;min-height:148px;display:flex;flex-direction:column;cursor:pointer; }
 .cal-round:hover{background:var(--paper-3)}
 .cal-round:last-child{border-right:none}
 .cal-round.done{background:var(--paper-2)}
@@ -354,3 +355,30 @@ body::before {
 [data-theme="dark"] #dm-toggle{background:var(--carbon-3);border-color:var(--rb-yellow);box-shadow:0 4px 20px rgba(255,215,0,0.3),0 2px 8px rgba(0,0,0,0.6)}
 #dm-toggle::after{content:attr(data-tip);position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);background:var(--carbon);color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s ease;border:1px solid var(--redbull)}
 #dm-toggle:hover::after{opacity:1}
+
+/* Circuit detail card, opened by clicking a round on the season calendar */
+.circuit-modal-backdrop{position:fixed;inset:0;background:rgba(4,6,15,0.68);backdrop-filter:blur(3px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;animation:circuitFadeIn 0.2s ease both}
+.circuit-modal{position:relative;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;background:var(--paper);border:2px solid var(--ink);box-shadow:0 20px 60px rgba(0,0,0,0.45);padding:32px;animation:circuitPopIn 0.25s cubic-bezier(.3,.9,.3,1) both}
+[data-theme="dark"] .circuit-modal{background:var(--paper-2)}
+.circuit-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:1px solid var(--rule-light);background:var(--paper-2);color:var(--ink-2);cursor:pointer;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.circuit-modal-close:hover{background:var(--redbull);border-color:var(--redbull);color:#fff}
+.circuit-modal-head{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.circuit-modal-flag{font-size:40px;line-height:1}
+.circuit-modal-country{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:2px}
+.circuit-modal-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
+.circuit-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:20px;background:var(--rule-light)}
+.circuit-stat{background:var(--carbon);border-left:3px solid var(--track);padding:16px 18px;min-height:74px}
+[data-theme="dark"] .circuit-stat{background:var(--carbon-2)}
+.circuit-stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;margin-bottom:8px}
+.circuit-stat-value{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.01em}
+.circuit-stat-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.55);margin-top:4px}
+.circuit-map{border:1px solid var(--rule-light);background:#0a0e1c;padding:12px;display:flex;align-items:center;justify-content:center}
+.circuit-map img{max-width:100%;height:auto;display:block}
+.circuit-modal-empty{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-3);letter-spacing:.04em;padding:24px 0}
+@keyframes circuitFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes circuitPopIn{from{opacity:0;transform:translateY(12px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:640px){
+  .circuit-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .circuit-modal{padding:24px}
+  .circuit-modal-name{font-size:21px}
+}

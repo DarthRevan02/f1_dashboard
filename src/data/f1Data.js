@@ -39,29 +39,44 @@ export const verstappenSpotlight = {
 export const seasonProgressPct = Math.round((8.5 / 22) * 100 * 10) / 10;
 
 export const calendar = [
-  { round: 'R01', status: 'done', flag: '🇦🇺', country: 'Australia', name: 'Albert Park', date: 'Mar 06–08', winner: 'G. Russell' },
-  { round: 'R02', status: 'done', flag: '🇨🇳', country: 'China', name: 'Shanghai', date: 'Mar 13–15', winner: 'K. Antonelli' },
-  { round: 'R03', status: 'done', flag: '🇯🇵', country: 'Japan', name: 'Suzuka', date: 'Mar 27–29', winner: 'K. Antonelli' },
-  { round: 'R04', status: 'done', flag: '🇺🇸', country: 'USA', name: 'Miami', date: 'May 01–03', winner: 'K. Antonelli' },
-  { round: 'R05', status: 'done', flag: '🇨🇦', country: 'Canada', name: 'Montreal', date: 'May 22–24', winner: 'K. Antonelli' },
-  { round: 'R06', status: 'done', flag: '🇲🇨', country: 'Monaco', name: 'Monte Carlo', date: 'Jun 04–07', winner: 'K. Antonelli' },
-  { round: 'R07', status: 'done', flag: '🇪🇸', country: 'Spain', name: 'Barcelona', date: 'Jun 11–14', winner: 'L. Hamilton' },
-  { round: 'R08', status: 'done', flag: '🇦🇹', country: 'Austria', name: 'Red Bull Ring', date: 'Jun 25–28', winner: 'G. Russell' },
-  { round: 'R09 · LIVE 🔴', status: 'next', flag: '🇬🇧', country: 'UK', name: 'Silverstone', date: 'Jul 02–05' },
-  { round: 'R10', status: 'upcoming', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 16–19' },
-  { round: 'R11', status: 'upcoming', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 23–26' },
-  { round: 'R12', status: 'upcoming', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 20–23' },
-  { round: 'R13', status: 'upcoming', flag: '🇮🇹', country: 'Italy', name: 'Monza', date: 'Sep 03–06' },
-  { round: 'R14', status: 'upcoming', flag: '🇪🇸', country: 'Spain', name: 'Madrid', date: 'Sep 10–13' },
-  { round: 'R15', status: 'upcoming', flag: '🇦🇿', country: 'Azerbaijan', name: 'Baku', date: 'Sep 23–26' },
-  { round: 'R16', status: 'upcoming', flag: '🇸🇬', country: 'Singapore', name: 'Marina Bay', date: 'Oct 09–11' },
-  { round: 'R17', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Austin', date: 'Oct 23–25' },
-  { round: 'R18', status: 'upcoming', flag: '🇲🇽', country: 'Mexico', name: 'Mexico City', date: 'Oct 30–Nov 1' },
-  { round: 'R19', status: 'upcoming', flag: '🇧🇷', country: 'Brazil', name: 'São Paulo', date: 'Nov 06–08' },
-  { round: 'R20', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Las Vegas', date: 'Nov 19–21' },
-  { round: 'R21', status: 'upcoming', flag: '🇶🇦', country: 'Qatar', name: 'Lusail', date: 'Nov 27–29' },
-  { round: 'R22', status: 'upcoming', flag: '🇦🇪', country: 'UAE', name: 'Yas Marina', date: 'Dec 04–06' },
+  { id: 'R01', round: 'R01', status: 'done', flag: '🇦🇺', country: 'Australia', name: 'Albert Park', date: 'Mar 06–08', winner: 'G. Russell' },
+  { id: 'R02', round: 'R02', status: 'done', flag: '🇨🇳', country: 'China', name: 'Shanghai', date: 'Mar 13–15', winner: 'K. Antonelli' },
+  { id: 'R03', round: 'R03', status: 'done', flag: '🇯🇵', country: 'Japan', name: 'Suzuka', date: 'Mar 27–29', winner: 'K. Antonelli' },
+  { id: 'R04', round: 'R04', status: 'done', flag: '🇺🇸', country: 'USA', name: 'Miami', date: 'May 01–03', winner: 'K. Antonelli' },
+  { id: 'R05', round: 'R05', status: 'done', flag: '🇨🇦', country: 'Canada', name: 'Montreal', date: 'May 22–24', winner: 'K. Antonelli' },
+  { id: 'R06', round: 'R06', status: 'done', flag: '🇲🇨', country: 'Monaco', name: 'Monte Carlo', date: 'Jun 04–07', winner: 'K. Antonelli' },
+  { id: 'R07', round: 'R07', status: 'done', flag: '🇪🇸', country: 'Spain', name: 'Barcelona', date: 'Jun 11–14', winner: 'L. Hamilton' },
+  { id: 'R08', round: 'R08', status: 'done', flag: '🇦🇹', country: 'Austria', name: 'Red Bull Ring', date: 'Jun 25–28', winner: 'G. Russell' },
+  { id: 'R09', round: 'R09 · LIVE 🔴', status: 'next', flag: '🇬🇧', country: 'UK', name: 'Silverstone', date: 'Jul 02–05' },
+  { id: 'R10', round: 'R10', status: 'upcoming', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 16–19' },
+  { id: 'R11', round: 'R11', status: 'upcoming', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 23–26' },
+  { id: 'R12', round: 'R12', status: 'upcoming', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 20–23' },
+  { id: 'R13', round: 'R13', status: 'upcoming', flag: '🇮🇹', country: 'Italy', name: 'Monza', date: 'Sep 03–06' },
+  { id: 'R14', round: 'R14', status: 'upcoming', flag: '🇪🇸', country: 'Spain', name: 'Madrid', date: 'Sep 10–13' },
+  { id: 'R15', round: 'R15', status: 'upcoming', flag: '🇦🇿', country: 'Azerbaijan', name: 'Baku', date: 'Sep 23–26' },
+  { id: 'R16', round: 'R16', status: 'upcoming', flag: '🇸🇬', country: 'Singapore', name: 'Marina Bay', date: 'Oct 09–11' },
+  { id: 'R17', round: 'R17', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Austin', date: 'Oct 23–25' },
+  { id: 'R18', round: 'R18', status: 'upcoming', flag: '🇲🇽', country: 'Mexico', name: 'Mexico City', date: 'Oct 30–Nov 1' },
+  { id: 'R19', round: 'R19', status: 'upcoming', flag: '🇧🇷', country: 'Brazil', name: 'São Paulo', date: 'Nov 06–08' },
+  { id: 'R20', round: 'R20', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Las Vegas', date: 'Nov 19–21' },
+  { id: 'R21', round: 'R21', status: 'upcoming', flag: '🇶🇦', country: 'Qatar', name: 'Lusail', date: 'Nov 27–29' },
+  { id: 'R22', round: 'R22', status: 'upcoming', flag: '🇦🇪', country: 'UAE', name: 'Yas Marina', date: 'Dec 04–06' },
 ];
+
+// Per-circuit reference info shown in the circuit detail card when a
+// calendar round is clicked. Keyed by the round `id` above.
+// Add an entry here for any round to make its card show real data —
+// rounds without an entry fall back to a "coming soon" state.
+export const circuitDetails = {
+  R09: {
+    circuitLength: '5.891 km',
+    raceDistance: '306.33 km',
+    laps: 52,
+    lapRecord: { time: '1:27.097', holder: 'Max Verstappen', year: 2020 },
+    defendingChampion: 'Lando Norris',
+    mapImage: '/circuits/silverstone.png',
+  },
+};
 
 // Drivers' Championship — after the Silverstone Sprint (Sat 4 Jul 2026)
 export const drivers = [
