@@ -1,11 +1,11 @@
-export default function Footer({ fanName = 'Aadi' }) {
+export default function Footer() {
   return (
     <div className="footer-wrap">
       <footer className="footer">
         <div className="f-note">
-          For {fanName} · eyes only<span className="f-dot"></span>Max P2 in FP1 — the hunt is on! 🐂
+          Personal edition · eyes only<span className="f-dot"></span>Max sits P7 — the comeback starts here 🐂
         </div>
-        <div className="f-brand">The <em>Pit Wall</em></div>
+        <div className="f-brand">Apex <em>Briefing</em></div>
       </footer>
     </div>
   );

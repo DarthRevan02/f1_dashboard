@@ -3,14 +3,14 @@ import { useMemo } from 'react';
 const DAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
-export default function Hero({ fanName = 'Aadi' }) {
+export default function Hero() {
   const { greeting, dateline } = useMemo(() => {
     const now = new Date();
     const h = now.getHours();
     const g = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
     const dl = `${DAYS[now.getDay()]} · ${String(now.getDate()).padStart(2, '0')} ${MONTHS[now.getMonth()]} · ${now.getFullYear()}`;
-    return { greeting: `${g}, ${fanName}`, dateline: dl };
-  }, [fanName]);
+    return { greeting: g, dateline: dl };
+  }, []);
 
   return (
     <section className="hero">
@@ -31,8 +31,8 @@ export default function Hero({ fanName = 'Aadi' }) {
 
       <div className="title-wrap">
         <h1 className="hero-title">
-          <span className="line1"><span>{fanName}'s</span></span>
-          <span className="line2"><span>Pit Wall.</span></span>
+          <span className="line1"><span>Apex</span></span>
+          <span className="line2"><span>Briefing.</span></span>
         </h1>
         <div className="title-underline"></div>
       </div>

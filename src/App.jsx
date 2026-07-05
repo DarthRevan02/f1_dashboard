@@ -33,7 +33,7 @@ export default function App() {
       <Ticker />
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
 
-      <Hero fanName="Aadi" />
+      <Hero />
       <RaceHero race={currentRace} />
       <VerSpotlight spotlight={verstappenSpotlight} />
       <Calendar rounds={calendar} progressPct={seasonProgressPct} />
@@ -52,7 +52,7 @@ export default function App() {
       </section>
 
       <StatsRibbon stats={statsRibbon} />
-      <Footer fanName="Aadi" />
+      <Footer />
     </>
   );
 }

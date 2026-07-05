@@ -1,7 +1,7 @@
 // All editable season content lives here.
 // Update points, results, and news each race weekend — no JSX to touch.
 
-export const fanDriver = 'VER'; // code of the driver Aadi follows
+export const fanDriver = 'VER'; // code of the driver this dashboard follows
 
 export const roundsCompleted = 8; // rounds fully finished before the current weekend
 
@@ -25,7 +25,7 @@ export const currentRace = {
 
 export const verstappenSpotlight = {
   number: '07',
-  eyebrow: '⚡ Aadi\u2019s Driver · Oracle Red Bull Racing',
+  eyebrow: '⚡ Favourite Driver · Oracle Red Bull Racing',
   name: 'Max',
   nameEm: 'Verstappen',
   meta: 'NED · 4× World Champion · #33 · RB22',

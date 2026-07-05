@@ -1,4 +1,4 @@
-# Aadi's Pit Wall 🏎️
+# Apex Briefing 🏎️
 
 A personal F1 2026 season dashboard — live-race hero, lights-out countdown, season calendar,
 Drivers'/Constructors' standings, and a paddock news feed, themed around Red Bull and built for
@@ -13,7 +13,7 @@ a Verstappen fan. Originally a single static HTML page, rebuilt here as a proper
 ## Project structure
 
 ```
-aadis-pitwall/
+apex-briefing/
 ├── index.html                # HTML shell + Google Fonts (Playfair Display, Inter, JetBrains Mono)
 ├── package.json
 ├── vite.config.js
