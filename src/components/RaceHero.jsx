@@ -19,11 +19,11 @@ export default function RaceHero({ race }) {
             </div>
             <div className="race-stats">
               <div className="race-stat">
-                <div className="race-stat-label">FP1 Fastest</div>
+                <div className="race-stat-label">{race.fp1.label || 'Session Fastest'}</div>
                 <div className="race-stat-val">{race.fp1.driver}</div>
               </div>
               <div className="race-stat">
-                <div className="race-stat-label">FP1 Time</div>
+                <div className="race-stat-label">{race.fp1.timeLabel || 'Time'}</div>
                 <div className="race-stat-val">{race.fp1.time}</div>
               </div>
               <div className="race-stat">

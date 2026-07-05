@@ -1,10 +1,10 @@
-export default function Constructors({ teams }) {
+export default function Constructors({ teams, roundsCompleted }) {
   return (
     <div className="col">
       <div className="col-head">
         <div className="col-num">§ 02</div>
         <div className="col-name">Constructors' <em>Cup</em></div>
-        <div className="col-sub">All {teams.length} teams · 2026</div>
+        <div className="col-sub">All {teams.length} teams · After {roundsCompleted} Rounds</div>
       </div>
 
       {teams.map((t, i) => (

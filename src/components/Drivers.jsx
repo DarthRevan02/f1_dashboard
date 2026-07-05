@@ -1,10 +1,10 @@
-export default function Drivers({ drivers }) {
+export default function Drivers({ drivers, roundsCompleted }) {
   return (
     <div className="col">
       <div className="col-head">
         <div className="col-num">§ 01</div>
         <div className="col-name">Drivers' <em>Championship</em></div>
-        <div className="col-sub">Top {drivers.length} · After 3 Rounds</div>
+        <div className="col-sub">Top {drivers.length} · After {roundsCompleted} Rounds</div>
       </div>
 
       {drivers.map((d, i) => (

@@ -21,6 +21,8 @@ import {
   fp1Podium,
   news,
   statsRibbon,
+  roundsCompleted,
+  paddockMeta,
 } from './data/f1Data';
 
 export default function App() {
@@ -38,9 +40,14 @@ export default function App() {
 
       <section className="main-section">
         <div className="main-grid">
-          <Drivers drivers={drivers} />
-          <Constructors teams={constructors} />
-          <Paddock podium={fp1Podium} news={news} />
+          <Drivers drivers={drivers} roundsCompleted={roundsCompleted} />
+          <Constructors teams={constructors} roundsCompleted={roundsCompleted} />
+          <Paddock
+            podium={fp1Podium}
+            news={news}
+            sessionLine={paddockMeta.sessionLine}
+            podiumHead={paddockMeta.podiumHead}
+          />
         </div>
       </section>
 

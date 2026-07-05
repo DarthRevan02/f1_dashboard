@@ -1,14 +1,14 @@
-export default function Paddock({ podium, news }) {
+export default function Paddock({ podium, news, sessionLine, podiumHead }) {
   return (
     <div className="col">
       <div className="col-head">
         <div className="col-num">§ 03</div>
         <div className="col-name">Paddock <em>Intel</em></div>
-        <div className="col-sub">Miami FP1 Live · May 02, 2026</div>
+        <div className="col-sub">{sessionLine}</div>
       </div>
 
       <div className="podium-block">
-        <div className="podium-head">Miami FP1 · Top 3 · 1:29.310 benchmark</div>
+        <div className="podium-head">{podiumHead}</div>
         <div className="podium-list">
           {podium.map((p) => (
             <div className={`pod-row ${p.pos.toLowerCase()}`} key={p.pos}>
