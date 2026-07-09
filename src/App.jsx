@@ -38,7 +38,7 @@ export default function App() {
       <Ticker />
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
 
-      <Hero />
+      <Hero race={currentRace} />
       <RaceHero race={currentRace} />
       <VerSpotlight spotlight={verstappenSpotlight} />
       <Calendar rounds={calendar} progressPct={seasonProgressPct} />
