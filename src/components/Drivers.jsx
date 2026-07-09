@@ -1,13 +1,28 @@
-export default function Drivers({ drivers, roundsCompleted }) {
+export default function Drivers({ drivers, roundsCompleted, status = 'live' }) {
   return (
     <div className="col">
       <div className="col-head">
         <div className="col-num">§ 01</div>
         <div className="col-name">Drivers' <em>Championship</em></div>
-        <div className="col-sub">Top {drivers.length} · After {roundsCompleted} Rounds</div>
+        <div className="col-sub">
+          Top {drivers.length} · After {roundsCompleted} Rounds
+          {status === 'live' && <span className="live-dot" title="Live from Jolpica-F1">● live</span>}
+          {status === 'error' && <span className="cached-dot" title="Showing last saved data">cached</span>}
+        </div>
       </div>
 
-      {drivers.map((d, i) => (
+      {status === 'loading'
+        ? Array.from({ length: 6 }).map((_, i) => (
+            <div className="driver-row skeleton-row" key={i} style={{ animationDelay: `${i * 0.05}s` }}>
+              <div className="skel skel-pos" />
+              <div className="driver-info">
+                <div className="skel skel-line" />
+                <div className="skel skel-line short" />
+              </div>
+              <div className="skel skel-pts" />
+            </div>
+          ))
+        : drivers.map((d, i) => (
         <div
           key={d.code}
           className={`driver-row${d.leader ? ' leader' : ''}${d.favDriver ? ' fav-driver' : ''}`}
