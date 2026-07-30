@@ -1,5 +1,4 @@
 import { useTheme } from './hooks/useTheme';
-import { useStandings } from './hooks/useStandings';
 import ThemeToggle from './components/ThemeToggle';
 import Ticker from './components/Ticker';
 import Hero from './components/Hero';
@@ -28,10 +27,6 @@ import {
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
-  const standings = useStandings({
-    fallbackDrivers: drivers,
-    fallbackConstructors: constructors,
-  });
 
   return (
     <>
@@ -46,14 +41,14 @@ export default function App() {
       <section className="main-section">
         <div className="main-grid">
           <Drivers
-            drivers={standings.drivers}
+            drivers={drivers}
             roundsCompleted={roundsCompleted}
-            status={standings.status}
+            status="static"
           />
           <Constructors
-            teams={standings.constructors}
+            teams={constructors}
             roundsCompleted={roundsCompleted}
-            status={standings.status}
+            status="static"
           />
           <Paddock
             podium={fp1Podium}
