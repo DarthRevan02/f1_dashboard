@@ -3,25 +3,25 @@
 
 export const fanDriver = 'VER'; // code of the driver this dashboard follows
 
-export const roundsCompleted = 9; // rounds fully finished before the current weekend
+export const roundsCompleted = 11; // rounds fully finished before the current weekend
 
 export const currentRace = {
-  round: 10,
-  totalRounds: 22,
+  round: 12,
+  totalRounds: 23,
   status: 'Up Next',
   live: false,
-  flag: '🇧🇪',
-  name: 'Belgian',
+  flag: '🇳🇱',
+  name: 'Dutch',
   nameEm: 'Grand Prix',
-  circuit: 'Circuit de Spa-Francorchamps',
-  venue: 'Stavelot, Belgium',
-  laps: 44,
-  distanceKm: 308.052,
-  format: 'Standard Format',
-  raceDateLabel: 'Jul 19 · Sun',
+  circuit: 'Circuit Zandvoort',
+  venue: 'Zandvoort, Netherlands',
+  laps: 72,
+  distanceKm: 306.587,
+  format: 'Sprint Weekend',
+  raceDateLabel: 'Aug 23 · Sun',
   // ISO timestamp used for the lights-out countdown (15:00 CEST / 14:00 BST / 13:00 UTC)
-  lightsOutISO: '2026-07-19T13:00:00Z',
-  fp1: { driver: 'C. Leclerc', time: 'Winner · GBR', label: 'Last Race Winner', timeLabel: 'British GP Result' },
+  lightsOutISO: '2026-08-23T13:00:00Z',
+  fp1: { driver: 'L. Norris', time: 'Winner · HUN', label: 'Last Race Winner', timeLabel: 'Hungarian GP Result' },
 };
 
 export const verstappenSpotlight = {
@@ -31,13 +31,13 @@ export const verstappenSpotlight = {
   nameEm: 'Verstappen',
   meta: 'NED · 4× World Champion · #3 · RB22',
   stats: [
-    { label: 'British GP · Silverstone', value: 'DNF' },
-    { label: 'Championship', value: 'P7 · 76pts' },
-    { label: 'Gap to P1', value: '−103', highlight: true },
+    { label: 'Hungarian GP · Hungaroring', value: 'P2' },
+    { label: 'Championship', value: 'P7 · 91pts' },
+    { label: 'Gap to P1', value: '−113', highlight: true },
   ],
 };
 
-export const seasonProgressPct = Math.round((9 / 22) * 100 * 10) / 10;
+export const seasonProgressPct = Math.round((11 / 23) * 100 * 10) / 10;
 
 export const calendar = [
   { id: 'R01', round: 'R01', status: 'done', flag: '🇦🇺', country: 'Australia', name: 'Albert Park', date: 'Mar 06–08', winner: 'G. Russell' },
@@ -49,19 +49,20 @@ export const calendar = [
   { id: 'R07', round: 'R07', status: 'done', flag: '🇪🇸', country: 'Spain', name: 'Barcelona', date: 'Jun 11–14', winner: 'L. Hamilton' },
   { id: 'R08', round: 'R08', status: 'done', flag: '🇦🇹', country: 'Austria', name: 'Red Bull Ring', date: 'Jun 25–28', winner: 'G. Russell' },
   { id: 'R09', round: 'R09', status: 'done', flag: '🇬🇧', country: 'UK', name: 'Silverstone', date: 'Jul 02–05', winner: 'C. Leclerc' },
-  { id: 'R10', round: 'R10 · NEXT', status: 'next', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 17–19' },
-  { id: 'R11', round: 'R11', status: 'upcoming', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 24–26' },
-  { id: 'R12', round: 'R12', status: 'upcoming', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 21–23' },
+  { id: 'R10', round: 'R10', status: 'done', flag: '🇧🇪', country: 'Belgium', name: 'Spa', date: 'Jul 17–19', winner: 'K. Antonelli' },
+  { id: 'R11', round: 'R11', status: 'done', flag: '🇭🇺', country: 'Hungary', name: 'Hungaroring', date: 'Jul 24–26', winner: 'L. Norris' },
+  { id: 'R12', round: 'R12 · NEXT', status: 'next', flag: '🇳🇱', country: 'Netherlands', name: 'Zandvoort', date: 'Aug 21–23' },
   { id: 'R13', round: 'R13', status: 'upcoming', flag: '🇮🇹', country: 'Italy', name: 'Monza', date: 'Sep 04–06' },
-  { id: 'R14', round: 'R14', status: 'upcoming', flag: '🇪🇸', country: 'Spain', name: 'Madrid', date: 'Sep 10–13' },
-  { id: 'R15', round: 'R15', status: 'upcoming', flag: '🇦🇿', country: 'Azerbaijan', name: 'Baku', date: 'Sep 23–26' },
-  { id: 'R16', round: 'R16', status: 'upcoming', flag: '🇸🇬', country: 'Singapore', name: 'Marina Bay', date: 'Oct 09–11' },
-  { id: 'R17', round: 'R17', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Austin', date: 'Oct 23–25' },
-  { id: 'R18', round: 'R18', status: 'upcoming', flag: '🇲🇽', country: 'Mexico', name: 'Mexico City', date: 'Oct 30–Nov 1' },
-  { id: 'R19', round: 'R19', status: 'upcoming', flag: '🇧🇷', country: 'Brazil', name: 'São Paulo', date: 'Nov 06–08' },
-  { id: 'R20', round: 'R20', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Las Vegas', date: 'Nov 19–21' },
-  { id: 'R21', round: 'R21', status: 'upcoming', flag: '🇶🇦', country: 'Qatar', name: 'Lusail', date: 'Nov 27–29' },
-  { id: 'R22', round: 'R22', status: 'upcoming', flag: '🇦🇪', country: 'UAE', name: 'Yas Marina', date: 'Dec 04–06' },
+  { id: 'R14', round: 'R14', status: 'upcoming', flag: '🇪🇸', country: 'Spain', name: 'Madrid', date: 'Sep 11–13' },
+  { id: 'R15', round: 'R15', status: 'upcoming', flag: '🇦🇿', country: 'Azerbaijan', name: 'Baku', date: 'Sep 24–26' },
+  { id: 'R16', round: 'R16', status: 'upcoming', flag: '🇧🇭', country: 'Bahrain', name: 'Sepang (Malaysia)', date: 'Oct 02–04' },
+  { id: 'R17', round: 'R17', status: 'upcoming', flag: '🇸🇬', country: 'Singapore', name: 'Marina Bay', date: 'Oct 09–11' },
+  { id: 'R18', round: 'R18', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Austin', date: 'Oct 23–25' },
+  { id: 'R19', round: 'R19', status: 'upcoming', flag: '🇲🇽', country: 'Mexico', name: 'Mexico City', date: 'Oct 30–Nov 1' },
+  { id: 'R20', round: 'R20', status: 'upcoming', flag: '🇧🇷', country: 'Brazil', name: 'São Paulo', date: 'Nov 06–08' },
+  { id: 'R21', round: 'R21', status: 'upcoming', flag: '🇺🇸', country: 'USA', name: 'Las Vegas', date: 'Nov 19–21' },
+  { id: 'R22', round: 'R22', status: 'upcoming', flag: '🇶🇦', country: 'Qatar', name: 'Lusail', date: 'Nov 27–29' },
+  { id: 'R23', round: 'R23', status: 'upcoming', flag: '🇦🇪', country: 'UAE', name: 'Yas Marina', date: 'Dec 04–06' },
 ];
 
 // Per-circuit reference info shown in the circuit detail card when a
@@ -138,7 +139,7 @@ export const circuitDetails = {
     raceDistance: '308.052 km',
     laps: 44,
     lapRecord: { time: '1:44.701', holder: 'Sergio Pérez', year: 2024 },
-    defendingChampion: 'Oscar Piastri',
+    defendingChampion: 'Kimi Antonelli',
     mapImage: '/circuits/spa.png',
   },
   R11: {
@@ -180,7 +181,16 @@ export const circuitDetails = {
     defendingChampion: 'Max Verstappen',
     mapImage: '/circuits/baku.png',
   },
+  // Bahrain GP relocated to Sepang International Circuit, Malaysia, after the
+  // original April Sakhir date was cancelled due to the 2026 Iran war.
   R16: {
+    circuitLength: '5.543 km',
+    raceDistance: '310.408 km',
+    laps: 56,
+    lapRecord: { time: '1:34.080', holder: 'Lewis Hamilton', year: 2017 },
+    defendingChampion: 'N/A · First Bahrain GP hosted in Malaysia',
+  },
+  R17: {
     circuitLength: '4.940 km',
     raceDistance: '306.143 km',
     laps: 62,
@@ -188,42 +198,42 @@ export const circuitDetails = {
     defendingChampion: 'George Russell',
     mapImage: '/circuits/marina_bay.png',
   },
-  R17: {
+  R18: {
     circuitLength: '5.513 km',
     raceDistance: '308.405 km',
     laps: 56,
     lapRecord: { time: '1:36.169', holder: 'Charles Leclerc', year: 2019 },
     defendingChampion: 'Max Verstappen',
   },
-  R18: {
+  R19: {
     circuitLength: '4.304 km',
     raceDistance: '305.354 km',
     laps: 71,
     lapRecord: { time: '1:17.774', holder: 'Valtteri Bottas', year: 2021 },
     defendingChampion: 'Lando Norris',
   },
-  R19: {
+  R20: {
     circuitLength: '4.309 km',
     raceDistance: '305.879 km',
     laps: 71,
     lapRecord: { time: '1:10.540', holder: 'Valtteri Bottas', year: 2018 },
     defendingChampion: 'Lando Norris',
   },
-  R20: {
+  R21: {
     circuitLength: '6.201 km',
     raceDistance: '309.958 km',
     laps: 50,
     lapRecord: { time: '1:33.365', holder: 'Max Verstappen', year: 2025 },
     defendingChampion: 'Max Verstappen',
   },
-  R21: {
+  R22: {
     circuitLength: '5.419 km',
     raceDistance: '308.611 km',
     laps: 57,
     lapRecord: { time: '1:22.384', holder: 'Lando Norris', year: 2024 },
     defendingChampion: 'Max Verstappen',
   },
-  R22: {
+  R23: {
     circuitLength: '5.281 km',
     raceDistance: '306.183 km',
     laps: 58,
@@ -232,93 +242,100 @@ export const circuitDetails = {
   },
 };
 
-// Drivers' Championship — after the British Grand Prix (Sun 5 Jul 2026)
+// Drivers' Championship — after the Hungarian Grand Prix (Sun 26 Jul 2026)
 export const drivers = [
-  { pos: 1, name: 'K. Antonelli', code: 'ANT', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'ITA', gap: null, pts: 179, leader: true },
-  { pos: 2, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -25, pts: 154 },
-  { pos: 3, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -32, pts: 147 },
-  { pos: 4, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -71, pts: 108 },
-  { pos: 5, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -82, pts: 97 },
-  { pos: 6, name: 'O. Piastri', code: 'PIA', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'AUS', gap: -97, pts: 82 },
-  { pos: 7, name: 'M. Verstappen', code: 'VER', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'NED', gap: -103, pts: 76, favDriver: true },
-  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -127, pts: 52 },
-  { pos: 9, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -137, pts: 42 },
-  { pos: 10, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -140, pts: 39 },
+  { pos: 1, name: 'K. Antonelli', code: 'ANT', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'ITA', gap: null, pts: 204, leader: true },
+  { pos: 2, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -45, pts: 159 },
+  { pos: 3, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -50, pts: 154 },
+  { pos: 4, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -78, pts: 126 },
+  { pos: 5, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -101, pts: 103 },
+  { pos: 6, name: 'O. Piastri', code: 'PIA', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'AUS', gap: -112, pts: 92 },
+  { pos: 7, name: 'M. Verstappen', code: 'VER', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'NED', gap: -113, pts: 91, favDriver: true },
+  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -144, pts: 60 },
+  { pos: 9, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -162, pts: 42 },
+  { pos: 10, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -165, pts: 39 },
 ];
 
-// Constructors' Cup — after the British Grand Prix
+// Constructors' Cup — after the Hungarian Grand Prix
 export const constructors = [
-  { pos: 1, name: 'Mercedes-AMG', engine: 'Mercedes PU · DEU', teamVar: '--mercedes', pts: 333, barPct: 100 },
-  { pos: 2, name: 'Scuderia Ferrari', engine: 'Ferrari PU · ITA', teamVar: '--ferrari', pts: 255, barPct: 77 },
-  { pos: 3, name: 'McLaren', engine: 'Mercedes PU · GBR', teamVar: '--mclaren', pts: 179, barPct: 54 },
-  { pos: 4, name: 'Red Bull Racing ⚡', engine: 'Red Bull Ford · AUT', teamVar: '--redbull', pts: 128, barPct: 38, favTeam: true },
-  { pos: 5, name: 'Alpine', engine: 'Mercedes PU · FRA', teamVar: '--alpine', pts: 60, barPct: 18 },
-  { pos: 6, name: 'Racing Bulls', engine: 'Red Bull Ford · ITA', teamVar: '--racingbulls', pts: 59, barPct: 18 },
+  { pos: 1, name: 'Mercedes-AMG', engine: 'Mercedes PU · DEU', teamVar: '--mercedes', pts: 379, barPct: 100 },
+  { pos: 2, name: 'Scuderia Ferrari', engine: 'Ferrari PU · ITA', teamVar: '--ferrari', pts: 307, barPct: 81 },
+  { pos: 3, name: 'McLaren', engine: 'Mercedes PU · GBR', teamVar: '--mclaren', pts: 220, barPct: 58 },
+  { pos: 4, name: 'Red Bull Racing ⚡', engine: 'Red Bull Ford · AUT', teamVar: '--redbull', pts: 177, barPct: 47, favTeam: true },
+  { pos: 5, name: 'Racing Bulls', engine: 'Red Bull Ford · ITA', teamVar: '--racingbulls', pts: 66, barPct: 17 },
+  { pos: 6, name: 'Alpine', engine: 'Mercedes PU · FRA', teamVar: '--alpine', pts: 61, barPct: 16 },
   { pos: 7, name: 'Haas F1', engine: 'Ferrari PU · USA', teamVar: '--haas', pts: 21, barPct: 6 },
-  { pos: 8, name: 'Williams', engine: 'Mercedes PU · GBR', teamVar: '--williams', pts: 11, barPct: 3 },
-  { pos: 9, name: 'Audi', engine: 'Audi PU · DEU', teamVar: '--audi', pts: 6, barPct: 2 },
+  { pos: 8, name: 'Audi', engine: 'Audi PU · DEU', teamVar: '--audi', pts: 12, barPct: 3 },
+  { pos: 9, name: 'Williams', engine: 'Mercedes PU · GBR', teamVar: '--williams', pts: 11, barPct: 3 },
   { pos: 10, name: 'Aston Martin', engine: 'Honda PU · GBR', teamVar: '--aston', pts: 1, barPct: 0 },
   { pos: 11, name: 'Cadillac', engine: 'Ferrari PU · USA · NEW', teamVar: '--cadillac', pts: 0, barPct: 0 },
 ];
 
 export const paddockMeta = {
-  sessionLine: 'Silverstone Result · Jul 05, 2026',
-  podiumHead: 'British GP · Top 3 · Sun 5 Jul',
+  sessionLine: 'Hungaroring Result · Jul 26, 2026',
+  podiumHead: 'Hungarian GP · Top 3 · Sun 26 Jul',
 };
 
-// British Grand Prix result, Sun 5 July 2026 — race finished behind the Safety Car
+// Hungarian Grand Prix result, Sun 26 July 2026
 export const fp1Podium = [
-  { pos: 'P1', name: 'Charles Leclerc', team: 'Ferrari · Winner', time: 'Winner' },
-  { pos: 'P2', name: 'George Russell', team: 'Mercedes · SC finish', time: 'SC' },
-  { pos: 'P3', name: 'Lewis Hamilton', team: 'Ferrari · Under review', time: 'Investigation' },
+  { pos: 'P1', name: 'Lando Norris', team: 'McLaren · Winner', time: 'Winner' },
+  { pos: 'P2', name: 'Max Verstappen', team: 'Red Bull · +15.08s', time: '+15.08s' },
+  { pos: 'P3', name: 'Kimi Antonelli', team: 'Mercedes · +18.72s', time: '+18.72s' },
 ];
 
 export const news = [
   {
-    kicker: 'RACE · JUL 05',
+    kicker: 'RACE · JUL 26',
     num: '01',
     lead: true,
     tone: 'default',
-    headline: 'Leclerc wins chaotic British GP as Antonelli\u2019s title charge unravels late',
-    body: 'Charles Leclerc held firm through a dramatic Silverstone to claim his ninth career win and first at the circuit, after championship leader Kimi Antonelli — who had built a commanding lead — suffered a left-front wheel shield failure on Lap 41 and picked up a track-limits penalty that dropped him out of the points entirely. A late Verstappen crash brought out the Safety Car that sealed the result, with George Russell inheriting second by staying out during the stoppage.',
+    headline: 'Norris ends winless run with dominant Hungarian GP as Piastri retires from the lead',
+    body: 'Lando Norris converted pole into McLaren\u2019s first win of 2026 at the Hungaroring, coming out on top of an early tussle with team mate Oscar Piastri before pulling clear in the closing stint. Piastri, who had led since a Lap 1 pass at Turn 2, retired late with a gearbox failure that triggered a Virtual Safety Car, while Max Verstappen salvaged an unexpected second and Kimi Antonelli held on for third to extend his championship lead.',
   },
   {
     kicker: '⚡ Red Bull Watch',
     num: '02',
-    tone: 'alert',
-    headline: 'Another blank for Verstappen as late Stowe crash ends his Silverstone weekend',
-    body: 'Max spun into the gravel at Stowe on Lap 48 while running well outside the points, triggering the Safety Car that decided the race for those ahead of him. It is his second retirement of the season and leaves Red Bull\u2019s home-soil title defence looking increasingly remote — Max remains seventh in the standings, 103 points off the lead, as speculation over his long-term future keeps building in the paddock.',
+    tone: 'default',
+    headline: 'Verstappen fights back to P2 in Hungary after a difficult weekend with the RB22',
+    body: 'Max battled the car\u2019s balance all weekend but still crossed the line 15 seconds behind Norris for a second Red Bull podium in three races, following his P3 at Spa. He now sits seventh in the standings on 91 points, 113 behind Antonelli, with the RB22\u2019s inconsistent form still the team\u2019s biggest question mark heading into the summer break.',
   },
   {
-    kicker: '⚠ Stewards\u2019 Inquiry',
+    kicker: 'Spa Recap',
     num: '03',
+    tone: 'neutral',
+    headline: 'Antonelli beats Leclerc for sixth win of the season as Russell\u2019s race ends on Lap 1',
+    body: 'Kimi Antonelli survived early pressure from Verstappen and a mid-race strategy setback to reclaim the lead from Charles Leclerc on the Kemmel Straight, taking the chequered flag by 1.9 seconds at Spa-Francorchamps. Mercedes team mate George Russell was eliminated in a Lap 1 clash with Lewis Hamilton, a result that widened Antonelli\u2019s championship advantage heading into Hungary.',
+  },
+  {
+    kicker: 'Calendar News',
+    num: '04',
     tone: 'alert',
-    headline: 'Hamilton\u2019s home podium in jeopardy after yellow-flag investigation',
-    body: 'Lewis Hamilton crossed the line third in front of his home crowd, but the stewards have opened a post-race investigation into a yellow-flag infringement that could yet cost him the result. A decision is expected in the hours after the race, with Isack Hadjar\u2019s fifth-place Red Bull result also under scrutiny from the same phase of the Safety Car period.',
+    headline: 'Bahrain GP returns to the calendar — relocated to Sepang, Malaysia, for October',
+    body: 'The Bahrain and Saudi Arabian Grands Prix were cancelled in April after the outbreak of the 2026 Iran war, but F1 has now confirmed a replacement round: the Bahrain GP will be run at Sepang International Circuit from Oct 2\u20134, slotting in ahead of Singapore as part of a triple-header with Azerbaijan.',
   },
   {
     kicker: 'Title Fight',
-    num: '04',
+    num: '05',
     tone: 'neutral',
-    headline: 'Antonelli\u2019s lead cut to 25 points as Mercedes team mates close in',
-    body: 'Kimi Antonelli\u2019s non-score allowed both George Russell and Lewis Hamilton to close the gap at the top, with Russell now just a race win behind. Ferrari also clawed back 22 points on Mercedes in the Constructors\u2019 Championship thanks to Leclerc\u2019s win, setting up a tighter fight as the paddock heads to Spa-Francorchamps for round 10.',
+    headline: 'Antonelli\u2019s lead swells to 45 points after back-to-back podiums',
+    body: 'Kimi Antonelli\u2019s win at Spa and podium in Hungary have stretched his advantage at the top, with Lewis Hamilton\u2019s Hungaroring P4 lifting him ahead of Russell into second overall. Mercedes now lead Ferrari by 72 points in the Constructors\u2019 Championship, with McLaren\u2019s Hungary win closing the gap to Red Bull in the fight for third.',
   },
 ];
 
 export const tickerItems = [
-  { sym: 'RACE', val: 'LECLERC WINS', pts: 'FIRST AT SILVERSTONE' },
-  { sym: 'WDC', val: 'ANTONELLI 179', pts: '+25 OVER RUSSELL' },
-  { sym: 'VER ⚡', val: 'DNF · CRASH', pts: 'P7 CHAMPIONSHIP' },
-  { sym: 'ANTONELLI', val: 'WHEEL SHIELD FAIL', pts: 'DROPPED OUT OF POINTS' },
-  { sym: 'WCC', val: 'MERCEDES 333', pts: '+78 OVER FERRARI' },
-  { sym: 'STEWARDS', val: 'HAMILTON UNDER REVIEW', pts: 'PODIUM AT RISK' },
-  { sym: 'NEXT UP', val: 'BELGIAN GP', pts: 'SPA · JUL 19' },
-  { sym: 'SPA', val: '44 LAPS', pts: '308.052 KM' },
+  { sym: 'RACE', val: 'NORRIS WINS', pts: 'FIRST MCLAREN WIN OF 2026' },
+  { sym: 'WDC', val: 'ANTONELLI 204', pts: '+45 OVER HAMILTON' },
+  { sym: 'VER ⚡', val: 'P2 · HUNGARY', pts: 'P7 CHAMPIONSHIP' },
+  { sym: 'PIASTRI', val: 'GEARBOX DNF', pts: 'LOST LEAD LATE' },
+  { sym: 'WCC', val: 'MERCEDES 379', pts: '+72 OVER FERRARI' },
+  { sym: 'CALENDAR', val: 'BAHRAIN GP ADDED', pts: 'SEPANG · OCT 02\u201304' },
+  { sym: 'NEXT UP', val: 'DUTCH GP', pts: 'ZANDVOORT · AUG 23' },
+  { sym: 'ZANDVOORT', val: '72 LAPS', pts: '306.587 KM · SPRINT' },
 ];
 
 export const statsRibbon = [
-  { label: 'Race Winner · Silverstone', big: 'LEC', bigEm: 'P1', sub: 'Leclerc\u2019s first British GP win' },
-  { label: 'Championship Gap', big: '', bigEm: '+25', bigTail: 'pts', sub: 'Antonelli leads Russell after a costly DNF' },
-  { label: '⚡ Verstappen · British GP', big: 'DNF', bigEm: 'P7 WDC', sub: 'Late crash at Stowe triggers Safety Car', isVer: true },
-  { label: 'Constructors\u2019 Gap', big: 'MER', bigEm: '+78', bigTail: 'pts', sub: 'Mercedes lead Ferrari · McLaren P3' },
+  { label: 'Race Winner · Hungaroring', big: 'NOR', bigEm: 'P1', sub: 'Norris \u0026 McLaren\u2019s first win of 2026' },
+  { label: 'Championship Gap', big: '', bigEm: '+45', bigTail: 'pts', sub: 'Antonelli leads Hamilton after Spa \u0026 Hungary podiums' },
+  { label: '⚡ Verstappen · Hungarian GP', big: 'P2', bigEm: 'P7 WDC', sub: 'Fights back for second Red Bull podium in three races', isVer: true },
+  { label: 'Constructors\u2019 Gap', big: 'MER', bigEm: '+72', bigTail: 'pts', sub: 'Mercedes lead Ferrari · McLaren closing on Red Bull' },
 ];
