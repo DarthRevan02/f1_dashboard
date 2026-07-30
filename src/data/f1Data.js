@@ -32,8 +32,8 @@ export const verstappenSpotlight = {
   meta: 'NED · 4× World Champion · #3 · RB22',
   stats: [
     { label: 'Hungarian GP · Hungaroring', value: 'P2' },
-    { label: 'Championship', value: 'P7 · 91pts' },
-    { label: 'Gap to P1', value: '−113', highlight: true },
+    { label: 'Championship', value: 'P6 · 109pts' },
+    { label: 'Gap to P1', value: '−110', highlight: true },
   ],
 };
 
@@ -244,16 +244,16 @@ export const circuitDetails = {
 
 // Drivers' Championship — after the Hungarian Grand Prix (Sun 26 Jul 2026)
 export const drivers = [
-  { pos: 1, name: 'K. Antonelli', code: 'ANT', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'ITA', gap: null, pts: 204, leader: true },
-  { pos: 2, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -45, pts: 159 },
-  { pos: 3, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -50, pts: 154 },
-  { pos: 4, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -78, pts: 126 },
-  { pos: 5, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -101, pts: 103 },
-  { pos: 6, name: 'O. Piastri', code: 'PIA', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'AUS', gap: -112, pts: 92 },
-  { pos: 7, name: 'M. Verstappen', code: 'VER', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'NED', gap: -113, pts: 91, favDriver: true },
-  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -144, pts: 60 },
-  { pos: 9, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -162, pts: 42 },
-  { pos: 10, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -165, pts: 39 },
+  { pos: 1, name: 'K. Antonelli', code: 'ANT', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'ITA', gap: null, pts: 219, leader: true },
+  { pos: 2, name: 'L. Hamilton', code: 'HAM', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'GBR', gap: -50, pts: 169 },
+  { pos: 3, name: 'G. Russell', code: 'RUS', team: 'Mercedes', codeColor: 'var(--mercedes)', codeText: '#000', nat: 'GBR', gap: -59, pts: 160 },
+  { pos: 4, name: 'C. Leclerc', code: 'LEC', team: 'Ferrari', codeColor: 'var(--ferrari)', nat: 'MON', gap: -81, pts: 138 },
+  { pos: 5, name: 'L. Norris', code: 'NOR', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'GBR', gap: -91, pts: 128 },
+  { pos: 6, name: 'M. Verstappen', code: 'VER', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'NED', gap: -110, pts: 109, favDriver: true },
+  { pos: 7, name: 'O. Piastri', code: 'PIA', team: 'McLaren', codeColor: 'var(--mclaren)', nat: 'AUS', gap: -127, pts: 92 },
+  { pos: 8, name: 'I. Hadjar', code: 'HAD', team: 'Red Bull', codeColor: 'var(--redbull)', nat: 'FRA', gap: -151, pts: 68 },
+  { pos: 9, name: 'L. Lawson', code: 'LAW', team: 'Racing Bulls', codeColor: 'var(--racingbulls)', nat: 'NZL', gap: -176, pts: 43 },
+  { pos: 10, name: 'P. Gasly', code: 'GAS', team: 'Alpine', codeColor: 'var(--alpine)', nat: 'FRA', gap: -177, pts: 42 },
 ];
 
 // Constructors' Cup — after the Hungarian Grand Prix
@@ -317,15 +317,15 @@ export const news = [
     kicker: 'Title Fight',
     num: '05',
     tone: 'neutral',
-    headline: 'Antonelli\u2019s lead swells to 45 points after back-to-back podiums',
+    headline: 'Antonelli\u2019s lead swells to 50 points after back-to-back podiums',
     body: 'Kimi Antonelli\u2019s win at Spa and podium in Hungary have stretched his advantage at the top, with Lewis Hamilton\u2019s Hungaroring P4 lifting him ahead of Russell into second overall. Mercedes now lead Ferrari by 72 points in the Constructors\u2019 Championship, with McLaren\u2019s Hungary win closing the gap to Red Bull in the fight for third.',
   },
 ];
 
 export const tickerItems = [
   { sym: 'RACE', val: 'NORRIS WINS', pts: 'FIRST MCLAREN WIN OF 2026' },
-  { sym: 'WDC', val: 'ANTONELLI 204', pts: '+45 OVER HAMILTON' },
-  { sym: 'VER ⚡', val: 'P2 · HUNGARY', pts: 'P7 CHAMPIONSHIP' },
+  { sym: 'WDC', val: 'ANTONELLI 219', pts: '+50 OVER HAMILTON' },
+  { sym: 'VER ⚡', val: 'P2 · HUNGARY', pts: 'P6 CHAMPIONSHIP' },
   { sym: 'PIASTRI', val: 'GEARBOX DNF', pts: 'LOST LEAD LATE' },
   { sym: 'WCC', val: 'MERCEDES 379', pts: '+72 OVER FERRARI' },
   { sym: 'CALENDAR', val: 'BAHRAIN GP ADDED', pts: 'SEPANG · OCT 02\u201304' },
@@ -335,7 +335,7 @@ export const tickerItems = [
 
 export const statsRibbon = [
   { label: 'Race Winner · Hungaroring', big: 'NOR', bigEm: 'P1', sub: 'Norris \u0026 McLaren\u2019s first win of 2026' },
-  { label: 'Championship Gap', big: '', bigEm: '+45', bigTail: 'pts', sub: 'Antonelli leads Hamilton after Spa \u0026 Hungary podiums' },
-  { label: '⚡ Verstappen · Hungarian GP', big: 'P2', bigEm: 'P7 WDC', sub: 'Fights back for second Red Bull podium in three races', isVer: true },
+  { label: 'Championship Gap', big: '', bigEm: '+50', bigTail: 'pts', sub: 'Antonelli leads Hamilton after Spa \u0026 Hungary podiums' },
+  { label: '⚡ Verstappen · Hungarian GP', big: 'P2', bigEm: 'P6 WDC', sub: 'Fights back for second Red Bull podium in three races', isVer: true },
   { label: 'Constructors\u2019 Gap', big: 'MER', bigEm: '+72', bigTail: 'pts', sub: 'Mercedes lead Ferrari · McLaren closing on Red Bull' },
 ];
