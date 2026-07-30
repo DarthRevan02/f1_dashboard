@@ -35,7 +35,7 @@ export default function RaceHero({ race }) {
 
           <div className="race-right">
             <div className="countdown-label">Lights Out In</div>
-            <div className="countdown">
+            <div className={`countdown stage-${cd.stage}`}>
               <div className="cd-cell"><div className="cd-num">{cd.d}</div><div className="cd-label">Days</div></div>
               <div className="cd-cell"><div className="cd-num">{cd.h}</div><div className="cd-label">Hours</div></div>
               <div className="cd-cell"><div className="cd-num">{cd.m}</div><div className="cd-label">Mins</div></div>
