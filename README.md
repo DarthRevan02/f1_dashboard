@@ -1,7 +1,7 @@
 # Apex Briefing 🏎️
 
 A personal F1 2026 season dashboard — live-race hero, lights-out countdown, season calendar,
-Drivers'/Constructors' standings, and a paddock news feed, themed around Red Bull and built for
+2026 champions, Drivers'/Constructors' standings, and a paddock news feed, themed around Red Bull and built for
 a Verstappen fan. Originally a single static HTML page, rebuilt here as a proper React + Vite project.
 
 ## Stack
@@ -33,6 +33,8 @@ apex-briefing/
 │       ├── RaceHero.jsx       # Current race weekend block + countdown
 │       ├── VerSpotlight.jsx   # Favourite-driver spotlight card
 │       ├── Calendar.jsx       # Scrollable 23-round season strip (auto-scrolls to next race)
+│       ├── CircuitCard.jsx    # Circuit detail modal (stats, 2026 winner, track map)
+│       ├── Champions.jsx      # 2026 World Drivers' + Constructors' Champion cards
 │       ├── Drivers.jsx        # Drivers' Championship standings
 │       ├── Constructors.jsx   # Constructors' Cup standings
 │       ├── Paddock.jsx        # FP1 podium + news articles
@@ -72,6 +74,10 @@ No JSX editing required for routine updates. A few pointers:
 - `calendar[].status` — one of `"done"`, `"next"`, or `"upcoming"` (controls styling + the auto-scroll target)
 - `drivers[].favDriver` / `constructors[].favTeam` — highlights the row you're rooting for
 - `fanDriver` — the driver code your countdown/spotlight card is centred on
+- `champions` — the Drivers' and Constructors' title winners shown in the Champions section
+  (fill in once a title is mathematically decided)
+- `circuitDetails[roundId]` — `mapImage` points at a PNG in `public/circuits/`; `winner2026` fills the
+  card's "2026 Winner" stat; `defendingChampion` is the previous (2025) winner
 
 ## Notes on the rebuild
 

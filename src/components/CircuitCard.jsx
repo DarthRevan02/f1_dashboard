@@ -31,6 +31,7 @@ export default function CircuitCard({ round, details, onClose }) {
           sub: `${details.lapRecord.holder} (${details.lapRecord.year})`,
         },
         { label: 'Defending Champion', value: details.defendingChampion },
+        ...(details.winner2026 ? [{ label: '2026 Winner', value: details.winner2026 }] : []),
       ]
     : [];
 

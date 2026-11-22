@@ -32,6 +32,7 @@ export default function Drivers({ drivers, roundsCompleted, status = 'live' }) {
           <div className="driver-info">
             <div className="driver-line">
               <span className="driver-name">{d.name}</span>
+              {d.champion && <span className="champ-badge" title="2026 World Champion">🏆</span>}
               <span
                 className="driver-code"
                 style={{ background: d.codeColor, color: d.codeText || '#fff' }}

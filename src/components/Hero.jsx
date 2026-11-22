@@ -54,7 +54,7 @@ export default function Hero({ race }) {
 
       <div className="hero-sub">
         {liveWeekend && <span className="live-badge">Live Weekend</span>}
-        <span className="hero-nav">Drivers · Constructors · Paddock · Calendar</span>
+        <span className="hero-nav">Champions · Drivers · Constructors · Paddock · Calendar</span>
       </div>
     </section>
   );

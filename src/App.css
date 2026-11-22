@@ -423,3 +423,34 @@ body::before {
 .skel-pts{width:32px;height:20px;flex-shrink:0}
 .skel-bar{width:100%;height:6px;margin-top:10px}
 @keyframes skelShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ---------- 2026 Champions ---------- */
+.champions { max-width:1440px;margin:0 auto;padding:48px 36px 0;animation:fadeUpSlow 1s ease both 3.8s; }
+.champ-grid { display:grid;grid-template-columns:1fr 1fr;gap:20px; }
+.champ-card { background:var(--paper-2);border-top:4px solid var(--team-color);padding:28px 32px;position:relative;overflow:hidden;transition:var(--theme-transition); }
+.champ-card::before { content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(39,244,210,0.05) 0 2px,transparent 2px 16px);pointer-events:none; }
+.champ-num { position:absolute;right:24px;top:8px;font-family:'Titillium Web',sans-serif;font-size:clamp(90px,11vw,150px);font-weight:800;line-height:1;letter-spacing:-0.04em;color:var(--team-color);opacity:.14;pointer-events:none; }
+.champ-body { position:relative;z-index:1; }
+.champ-kicker { font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px; }
+.champ-name { font-family:'Titillium Web',sans-serif;font-size:clamp(28px,3.6vw,42px);font-weight:700;color:var(--ink);line-height:1;letter-spacing:-0.025em;margin-bottom:8px;display:flex;align-items:center;flex-wrap:wrap;gap:8px; }
+.champ-name em { font-style:italic;color:var(--team-color);text-shadow:0 0 1px rgba(0,0,0,.35); }
+.champ-flag { font-size:.6em;margin-left:4px; }
+.champ-team { font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px; }
+.champ-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-light);margin-bottom:18px; }
+.champ-stat { background:var(--paper);border-left:3px solid var(--team-color);padding:12px 14px; }
+.champ-stat-label { font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px; }
+.champ-stat-val { font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums; }
+.champ-clinched { font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--ink);margin-bottom:8px; }
+.champ-note { font-family:'Inter',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink-2);margin-bottom:14px; }
+.champ-runner { font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding-top:12px;border-top:1px solid var(--rule-light); }
+[data-theme="dark"] .champions { background:var(--paper); }
+[data-theme="dark"] .champ-stat { background:var(--paper); }
+@media(max-width:980px){
+  .champions { padding-left:20px;padding-right:20px; }
+  .champ-grid { grid-template-columns:1fr; }
+}
+@media(max-width:540px){
+  .champ-card { padding:22px 20px; }
+  .champ-stat-val { font-size:16px; }
+}
+.champ-badge { margin-left:6px;font-size:.9em; }

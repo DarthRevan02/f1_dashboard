@@ -34,7 +34,7 @@ export default function Constructors({ teams, roundsCompleted, status = 'live' }
           <div className="con-top">
             <div className="con-pos">{String(t.pos).padStart(2, '0')}</div>
             <div>
-              <div className="con-name">{t.name}</div>
+              <div className="con-name">{t.name}{t.champion && <span className="champ-badge" title="2026 World Champion">🏆</span>}</div>
               <div className="con-engine">{t.engine}</div>
             </div>
             <div className="con-pts">{t.pts}</div>

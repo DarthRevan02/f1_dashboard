@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import RaceHero from './components/RaceHero';
 import VerSpotlight from './components/VerSpotlight';
 import Calendar from './components/Calendar';
+import Champions from './components/Champions';
 import Drivers from './components/Drivers';
 import Constructors from './components/Constructors';
 import Paddock from './components/Paddock';
@@ -23,6 +24,7 @@ import {
   statsRibbon,
   roundsCompleted,
   paddockMeta,
+  champions,
 } from './data/f1Data';
 
 export default function App() {
@@ -37,6 +39,7 @@ export default function App() {
       <RaceHero race={currentRace} />
       <VerSpotlight spotlight={verstappenSpotlight} />
       <Calendar rounds={calendar} progressPct={seasonProgressPct} />
+      <Champions champions={champions} />
 
       <section className="main-section">
         <div className="main-grid">
